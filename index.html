@@ -1,351 +1,70 @@
+<!-- KODUN TAMAMI AŞAĞIDADIR, BUNU index.html OLARAK KAYDET -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REMKİM | Endüstriyel Kimyasallar ve Operasyon Mühendisliği</title>
+    <title>REMKIM | Endüstriyel Kimyasallar ve Proses Mühendisliği</title>
     <style>
-        :root {
-            --primary: #0f2027; 
-            --secondary: #203a43;
-            --accent: #ff6b6b; 
-            --whatsapp: #25d366;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-            --gray: #7f8c8d;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #ffffff;
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        nav {
-            background: var(--primary);
-            padding: 20px 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .logo {
-            color: #fff;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .logo span {
-            color: var(--gray);
-            font-size: 14px;
-            display: block;
-            font-weight: normal;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--accent);
-        }
-
-        .hero {
-            background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #fff;
-            padding: 0 20px;
-            margin-top: 60px;
-        }
-
-        .hero h1 {
-            font-size: 45px;
-            margin-bottom: 20px;
-            max-width: 800px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            margin-bottom: 30px;
-            max-width: 600px;
-            color: #ddd;
-        }
-
-        .btn {
-            background-color: var(--accent);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            background-color: #ff5252;
-        }
-
-        section {
-            padding: 80px 10%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            font-size: 32px;
-            color: var(--primary);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background: var(--accent);
-            margin: 10px auto 0;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: var(--light);
-            padding: 30px;
-            border-radius: 8px;
-            border-top: 4px solid var(--primary);
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .product-card h3 {
-            margin-bottom: 15px;
-            color: var(--secondary);
-        }
-
-        .product-card ul {
-            list-style-position: inside;
-            color: #555;
-        }
-
-        .product-card ul li {
-            margin-bottom: 8px;
-        }
-
-        .why-us {
-            background: var(--light);
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .why-us-content {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .why-us-item {
-            margin-bottom: 25px;
-        }
-
-        .why-us-item h3 {
-            color: var(--secondary);
-            margin-bottom: 5px;
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-action {
-            flex: 1;
-            min-width: 300px;
-            background: var(--light);
-            padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .whatsapp-btn {
-            background-color: var(--whatsapp);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 20px;
-            transition: transform 0.3s, background-color 0.3s;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        .whatsapp-btn:hover {
-            transform: translateY(-3px);
-            background-color: #20ba5a;
-        }
-
-        footer {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 20px;
-            font-size: 14px;
-        }
-
-        @media (max-width: 768px) {
-            nav { flex-direction: column; padding: 15px; }
-            nav ul { margin-top: 15px; }
-            .hero h1 { font-size: 30px; }
-            section { padding: 50px 5%; }
-        }
+        :root { --primary: #0f2027; --accent: #ff6b6b; --light: #f8f9fa; --secondary: #203a43; }
+        body { font-family: sans-serif; line-height: 1.6; color: #333; }
+        nav { background: var(--primary); padding: 20px 10%; color: white; display: flex; justify-content: space-between; align-items: center; }
+        .hero { background: var(--primary); color: white; text-align: center; padding: 100px 20px; }
+        .hero h1 { font-size: 50px; margin-bottom: 10px; }
+        .hero p { font-size: 20px; opacity: 0.9; }
+        .section { padding: 80px 10%; }
+        .benefits-box { background: #eef2f3; padding: 40px; border-radius: 10px; margin: 40px 0; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align: center; }
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
+        .cta-btn { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="logo">
-            REMKİM
-            <span>Endüstriyel Kimyasallar & Operasyon Mühendisliği</span>
-        </div>
-        <ul>
-            <li><a href="#anasayfa">Anasayfa</a></li>
-            <li><a href="#urunler">Ürünler</a></li>
-            <li><a href="#cozumler">Çözümlerimiz</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
+<nav>
+    <div><strong>REMKIM</strong> | Endüstriyel Kimyasallar ve Proses Mühendisliği</div>
+</nav>
+
+<section class="hero">
+    <h1>REMKIM</h1>
+    <p>Endüstriyel Kimyasallar ve Proses Mühendisliği</p>
+    <p style="font-style: italic; margin-top:10px;">Üretim hatları için performans odaklı kimyasal çözümler</p>
+</section>
+
+<section class="section">
+    <div class="benefits-box">
+        <h2 style="text-align:center;">Sağladığımız Faydalar</h2>
+        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+            <li>✅ Banyo ömrünü uzatır</li>
+            <li>✅ Nozul tıkanmalarını azaltır</li>
+            <li>✅ Kimyasal tüketimini düşürür</li>
+            <li>✅ Duruş sürelerini azaltır</li>
+            <li>✅ Operasyon verimliliğini artırır</li>
         </ul>
-    </nav>
+    </div>
+</section>
 
-    <!-- Hero Section -->
-    <section id="anasayfa" class="hero">
-        <h1>Endüstriyel Proseslerde Maksimum Verim, Minimum Maliyet</h1>
-        <p>Metal, tel çekme ve yüzey işlem sektörlerine özel geliştirilmiş nitelikli kimyasal katkılar ve yerinde mühendislik çözümleri.</p>
-        <a href="#iletisim" class="btn">Teknik Destek & Numune Talep Et</a>
-    </section>
+<section class="section">
+    <h2 style="text-align:center; margin-bottom:40px;">Ürünlerimiz</h2>
+    <div class="products-grid">
+        <!-- Buradaki src kısımlarını resimlerinin adıyla değiştir -->
+        <div class="card"><img src="img/REMKIM ULTRALIFE.jpg" alt="REMKIM ULTRALIFE"><h3>REMKIM ULTRALIFE</h3><p>Banyo Ömür Uzatma ve Performans Katkısı</p></div>
+        <div class="card"><img src="img/REMFRESH.png" alt="REMFRESH"><h3>REMFRESH</h3><p>Kanalizasyon Bakım ve Koku Kontrol Sistemi</p></div>
+        <div class="card"><img src="img/REMMIKRO.jpeg" alt="REMMIKRO"><h3>REMMIKRO</h3><p>Endüstriyel El Temizleme Jeli</p></div>
+        <div class="card"><img src="img/REMLUBRIFLOW.jpeg" alt="REMLUBRIFLOW"><h3>REMLUBRIFLOW</h3><p>Hadde Katkıları ve Yağlama</p></div>
+        <div class="card"><img src="img/REMGUARD..jpeg" alt="REMGUARD"><h3>REMGUARD</h3><p>Kalıp Koruma Katkıları</p></div>
+    </div>
+</section>
 
-    <!-- Products Section -->
-    <section id="urunler">
-        <h2 class="section-title">Ürün Gruplarımız</h2>
-        <div class="products-grid">
-            <div class="product-card">
-                <h3>Tel Çekme & Hadde Kimyasalları</h3>
-                <ul>
-                    <li>Filmaşin Tel Çekme Hadde Tozları (Sodyum & Kalsiyum Bazlı)</li>
-                    <li>Hadde Tozu Ekstra Yağlama Katkıları</li>
-                    <li>Proses Ömür Uzatıcı Özel Katkılar</li>
-                </ul>
-            </div>
-            <div class="product-card">
-                <h3>Yüzey İşlem & Bakım</h3>
-                <ul>
-                    <li>Endüstriyel Alkali Temizlik Kimyasalları</li>
-                    <li>Banyo Ömür Uzatıcı Ajanlar</li>
-                    <li>Nozul Tıkanma Önleyici Formülasyonlar</li>
-                </ul>
-            </div>
-            <div class="product-card">
-                <h3>Endüstriyel Tesis Hijyeni</h3>
-                <ul>
-                    <li>Ağır Sanayi Tipi El Yıkama Jelleri</li>
-                    <li>Toplu Kullanım Alanları İçin Koku Kesici Tozlar</li>
-                    <li>Periyodik Tesis Bakım Tozları</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+<section class="section" style="background:#f4f4f4;">
+    <h2 style="text-align:center;">Hedef Sektörler</h2>
+    <p style="text-align:center;">Galvaniz tesisleri, Tel çekme hatları, Haddehaneler, Dökümhaneler, Motor revizyon atölyeleri, Yüzey işlem tesisleri, Endüstriyel yemekhaneler.</p>
+</section>
 
-    <!-- Solutions / Why Us Section -->
-    <section id="cozumler" class="why-us">
-        <div class="why-us-content">
-            <h2 class="section-title" style="text-align: left; margin-bottom: 30px;">Neden REMKİM?</h2>
-            <div class="why-us-item">
-                <h3>Müşteriye Özel (Terzi Usulü) Formülasyon</h3>
-                <p>Standart ürünleri dayatmıyoruz. Tesisinizin su kalitesine, hat hızına ve mekanik şartlarına göre kimyasallarımızı tesisinizde revize ediyoruz.</p>
-            </div>
-            <div class="why-us-item">
-                <h3>Operasyon Mühendisliği Vizyonu</h3>
-                <p>Sadece kimyasal satıp ayrılmıyoruz. Laboratuvar teorisini sahaya uyguluyor, banyo ömürlerini uzatarak duruş maliyetlerinizi düşürüyoruz.</p>
-            </div>
-            <div class="why-us-item">
-                <h3>İthal İkamesi & Yüksek Karlılık</h3>
-                <p>Yüksek performanslı yerli formüllerimizle, ithal muadillerine karşı fabrikalara doğrudan maliyet avantajı sağlıyoruz.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="iletisim">
-        <h2 class="section-title">Bizimle İletişime Geçin</h2>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>REMKİM</h3>
-                <p style="margin-top: 15px; color: var(--gray);">Sorun yaşadığınız endüstriyel prosesler için numune talep edebilir, sahadaki operasyonel problemleriniz için teknik destek alabilirsiniz.</p>
-                <p style="margin-top: 20px;"><strong>Çalışma Saatleri:</strong> Projelendirme ve Saha Analizleri</p>
-            </div>
-            <div class="contact-action">
-                <h3>Hızlı Teknik Destek Hattı</h3>
-                <p style="color: var(--gray); margin-top: 10px;">Proses şartlarınızı ve numune taleplerinizi bize doğrudan WhatsApp üzerinden iletebilirsiniz.</p>
-                <!-- TELEFON_NUMARANIZ yazan yere numaranızı yazın (Örn: 5321234567) -->
-                <a href="https://wa.me/5063347024?text=Merhaba%20REMK%C4%B0M,%20end%C3%BCstriyel%20proseslerimiz%20i%C3%A7in%20teknik%20destek%20ve%20numune%20talep%20ediyoruz." class="whatsapp-btn" target="_blank">
-                    WhatsApp ile İletişime Geç
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 REMKİM Endüstriyel Kimyasallar ve Operasyon Mühendisliği. Tüm Hakları Saklıdır.</p>
-    </footer>
+<footer style="text-align:center; padding:40px;">
+    <a href="https://wa.me/TELEFONUN" class="cta-btn">WhatsApp ile Teklif Al</a>
+</footer>
 
 </body>
 </html>

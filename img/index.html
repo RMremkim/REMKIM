@@ -1,70 +1,56 @@
-<!-- KODUN TAMAMI AŞAĞIDADIR, BUNU index.html OLARAK KAYDET -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REMKIM | Endüstriyel Kimyasallar ve Proses Mühendisliği</title>
+    <title>REMKIM | Endüstriyel Kimyasallar</title>
     <style>
-        :root { --primary: #0f2027; --accent: #ff6b6b; --light: #f8f9fa; --secondary: #203a43; }
-        body { font-family: sans-serif; line-height: 1.6; color: #333; }
-        nav { background: var(--primary); padding: 20px 10%; color: white; display: flex; justify-content: space-between; align-items: center; }
-        .hero { background: var(--primary); color: white; text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 50px; margin-bottom: 10px; }
-        .hero p { font-size: 20px; opacity: 0.9; }
-        .section { padding: 80px 10%; }
-        .benefits-box { background: #eef2f3; padding: 40px; border-radius: 10px; margin: 40px 0; }
-        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 20px; border: 1px solid #ddd; border-radius: 8px; text-align: center; }
-        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 15px; }
-        .cta-btn { background: var(--accent); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        :root { --primary: #0f2027; --accent: #ff6b6b; }
+        body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; color: #333; }
+        nav { background: var(--primary); color: white; padding: 20px 10%; text-align: center; }
+        .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 10%; }
+        
+        /* Kart Yapısı */
+        .card { background: white; border-radius: 8px; overflow: hidden; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .card img { width: 100%; height: 180px; object-fit: cover; }
+        .card-header { padding: 15px; font-weight: bold; background: #fff; }
+        .card-body { padding: 0 15px; max-height: 0; overflow: hidden; transition: 0.4s; font-size: 14px; color: #666; }
+        
+        /* Tıklanınca açılma mantığı (Checkbox hilesi ile tıkla-aç) */
+        input { display: none; }
+        input:checked ~ .card-body { max-height: 150px; padding: 15px; }
+        
+        .whatsapp-btn { display: block; width: 200px; margin: 20px auto; background: #25d366; color: white; text-align: center; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<nav>
-    <div><strong>REMKIM</strong> | Endüstriyel Kimyasallar ve Proses Mühendisliği</div>
-</nav>
+<nav>REMKIM | Endüstriyel Proses Mühendisliği</nav>
 
 <section class="hero">
     <h1>REMKIM</h1>
-    <p>Endüstriyel Kimyasallar ve Proses Mühendisliği</p>
-    <p style="font-style: italic; margin-top:10px;">Üretim hatları için performans odaklı kimyasal çözümler</p>
+    <p>Performans Odaklı Kimyasal Çözümler</p>
 </section>
 
-<section class="section">
-    <div class="benefits-box">
-        <h2 style="text-align:center;">Sağladığımız Faydalar</h2>
-        <ul style="list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-            <li>✅ Banyo ömrünü uzatır</li>
-            <li>✅ Nozul tıkanmalarını azaltır</li>
-            <li>✅ Kimyasal tüketimini düşürür</li>
-            <li>✅ Duruş sürelerini azaltır</li>
-            <li>✅ Operasyon verimliliğini artırır</li>
-        </ul>
+<div class="grid">
+    <label class="card">
+        <input type="checkbox">
+        <img src="img/ultralife.jpg" alt="Ürün">
+        <div class="card-header">REMKIM ULTRALIFE ▾</div>
+        <div class="card-body">Banyo ömrünü uzatır, nozul tıkanmalarını önler. Haddehaneler için yüksek verim sağlar.</div>
+    </label>
+
+    <label class="card">
+        <input type="checkbox">
+        <img src="img/remfresh.png" alt="Ürün">
+        <div class="card-header">REMFRESH ▾</div>
+        <div class="card-body">Endüstriyel koku kontrol sistemi. Fabrika içi ve yemekhaneler için hijyenik çözüm.</div>
+    </label>
+    
     </div>
-</section>
 
-<section class="section">
-    <h2 style="text-align:center; margin-bottom:40px;">Ürünlerimiz</h2>
-    <div class="products-grid">
-        <!-- Buradaki src kısımlarını resimlerinin adıyla değiştir -->
-        <div class="card"><img src="img/ultralife.png" alt="REMKIM ULTRALIFE"><h3>REMKIM ULTRALIFE</h3><p>Banyo Ömür Uzatma ve Performans Katkısı</p></div>
-        <div class="card"><img src="img/remfresh.png" alt="REMFRESH"><h3>REMFRESH</h3><p>Kanalizasyon Bakım ve Koku Kontrol Sistemi</p></div>
-        <div class="card"><img src="img/remmikro.png" alt="REMMIKRO"><h3>REMMIKRO</h3><p>Endüstriyel El Temizleme Jeli</p></div>
-        <div class="card"><img src="img/remlubriflow.jpeg" alt="REMLUBRIFLOW"><h3>REMLUBRIFLOW</h3><p>Hadde Katkıları ve Yağlama</p></div>
-        <div class="card"><img src="img/remguard.jpeg" alt="REMGUARD"><h3>REMGUARD</h3><p>Kalıp Koruma Katkıları</p></div>
-    </div>
-</section>
-
-<section class="section" style="background:#f4f4f4;">
-    <h2 style="text-align:center;">Hedef Sektörler</h2>
-    <p style="text-align:center;">Galvaniz tesisleri, Tel çekme hatları, Haddehaneler, Dökümhaneler, Motor revizyon atölyeleri, Yüzey işlem tesisleri, Endüstriyel yemekhaneler.</p>
-</section>
-
-<footer style="text-align:center; padding:40px;">
-    <a href="https://wa.me/5063347024" class="cta-btn">WhatsApp ile Teklif Al</a>
-</footer>
+<a href="https://wa.me/905XXXXXXXXXX" class="whatsapp-btn">Teknik Destek Al</a>
 
 </body>
 </html>

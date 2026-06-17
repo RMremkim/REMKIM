@@ -8,49 +8,33 @@
         :root { --primary: #0f2027; --accent: #ff6b6b; }
         body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f4f4f4; color: #333; }
         nav { background: var(--primary); color: white; padding: 20px 10%; text-align: center; }
-        .hero { background: var(--primary); color: white; text-align: center; padding: 60px 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; padding: 40px 10%; }
-        
-        /* Kart Yapısı */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 40px 10%; }
         .card { background: white; border-radius: 8px; overflow: hidden; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .card img { width: 100%; height: 180px; object-fit: cover; }
-        .card-header { padding: 15px; font-weight: bold; background: #fff; }
+        .card-header { padding: 15px; font-weight: bold; background: #fff; border-bottom: 1px solid #eee; }
         .card-body { padding: 0 15px; max-height: 0; overflow: hidden; transition: 0.4s; font-size: 14px; color: #666; }
-        
-        /* Tıklanınca açılma mantığı (Checkbox hilesi ile tıkla-aç) */
         input { display: none; }
         input:checked ~ .card-body { max-height: 150px; padding: 15px; }
-        
-        .whatsapp-btn { display: block; width: 200px; margin: 20px auto; background: #25d366; color: white; text-align: center; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; }
+        .whatsapp-btn { display: block; width: 220px; margin: 20px auto; background: #25d366; color: white; text-align: center; padding: 15px; border-radius: 5px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <nav>REMKIM | Endüstriyel Proses Mühendisliği</nav>
 
-<section class="hero">
-    <h1>REMKIM</h1>
-    <p>Performans Odaklı Kimyasal Çözümler</p>
-</section>
-
 <div class="grid">
-    <label class="card">
-        <input type="checkbox">
-        <img src="img/ultralife.jpg" alt="Ürün">
-        <div class="card-header">REMKIM ULTRALIFE ▾</div>
-        <div class="card-body">Banyo ömrünü uzatır, nozul tıkanmalarını önler. Haddehaneler için yüksek verim sağlar.</div>
-    </label>
+    <label class="card"><input type="checkbox"><img src="img/ultralife.png"><div class="card-header">REMKIM ULTRALIFE ▾</div><div class="card-body">Banyo ömrünü uzatır, nozul tıkanmalarını önler. Haddehaneler için yüksek verim sağlar.</div></label>
 
-    <label class="card">
-        <input type="checkbox">
-        <img src="img/remfresh.png" alt="Ürün">
-        <div class="card-header">REMFRESH ▾</div>
-        <div class="card-body">Endüstriyel koku kontrol sistemi. Fabrika içi ve yemekhaneler için hijyenik çözüm.</div>
-    </label>
-    
-    </div>
+    <label class="card"><input type="checkbox"><img src="img/remfresh.png"><div class="card-header">REMFRESH ▾</div><div class="card-body">Endüstriyel koku kontrol sistemi. Fabrika içi ve yemekhaneler için hijyenik çözüm.</div></label>
 
-<a href="https://wa.me/905XXXXXXXXXX" class="whatsapp-btn">Teknik Destek Al</a>
+    <label class="card"><input type="checkbox"><img src="img/remmikro.png"><div class="card-header">REMMIKRO ▾</div><div class="card-body">Ağır yağ ve kir temizliği. Sanayi tipi mikro aşındırıcı sistem.</div></label>
+
+    <label class="card"><input type="checkbox"><img src="img/remlubriflow.jpeg"><div class="card-header">REMLUBRIFLOW ▾</div><div class="card-body">Hadde katkıları. Üstün yağlama performansı ve akış geliştirme.</div></label>
+
+    <label class="card"><input type="checkbox"><img src="img/remguard.jpeg"><div class="card-header">REMGUARD ▾</div><div class="card-body">Kalıp koruma katkıları. Yapışma önleyici ve koruyucu sistemler.</div></label>
+</div>
+
+<a href="https://wa.me/5063347024" class="whatsapp-btn">Teknik Destek Al</a>
 
 </body>
 </html>

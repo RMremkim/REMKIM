@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REMKİM | Endüstriyel Kimyasallar ve Operasyon Mühendisliği</title>
     <style>
-        /* Modern ve Sanayi Odaklı Renk Paleti */
         :root {
-            --primary: #0f2027; /* Koyu Endüstriyel Mavi */
+            --primary: #0f2027; 
             --secondary: #203a43;
-            --accent: #ff6b6b; /* Dikkat çeken buton rengi */
+            --accent: #ff6b6b; 
+            --whatsapp: #25d366;
             --light: #f8f9fa;
             --dark: #2c3e50;
             --gray: #7f8c8d;
@@ -28,7 +28,6 @@
             line-height: 1.6;
         }
 
-        /* Navigation */
         nav {
             background: var(--primary);
             padding: 20px 10%;
@@ -76,7 +75,6 @@
             color: var(--accent);
         }
 
-        /* Hero Section */
         .hero {
             background: linear-gradient(rgba(15, 32, 39, 0.85), rgba(32, 58, 67, 0.85)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
             height: 100vh;
@@ -118,7 +116,6 @@
             background-color: #ff5252;
         }
 
-        /* Sections General */
         section {
             padding: 80px 10%;
         }
@@ -140,7 +137,6 @@
             margin: 10px auto 0;
         }
 
-        /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -174,7 +170,6 @@
             margin-bottom: 8px;
         }
 
-        /* Why Us Section */
         .why-us {
             background: var(--light);
             display: flex;
@@ -197,11 +192,11 @@
             margin-bottom: 5px;
         }
 
-        /* Contact & Form */
         .contact-container {
             display: flex;
             flex-wrap: wrap;
             gap: 50px;
+            align-items: center;
         }
 
         .contact-info {
@@ -209,46 +204,33 @@
             min-width: 300px;
         }
 
-        .contact-form {
+        .contact-action {
             flex: 1;
             min-width: 300px;
             background: var(--light);
-            padding: 30px;
+            padding: 40px;
             border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-
-        .submit-btn {
-            background: var(--primary);
+        .whatsapp-btn {
+            background-color: var(--whatsapp);
             color: white;
-            border: none;
-            padding: 12px 20px;
-            width: 100%;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
             font-weight: bold;
-            transition: background 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
         }
 
-        .submit-btn:hover {
-            background: var(--secondary);
+        .whatsapp-btn:hover {
+            transform: translateY(-3px);
+            background-color: #20ba5a;
         }
 
         footer {
@@ -259,7 +241,6 @@
             font-size: 14px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             nav { flex-direction: column; padding: 15px; }
             nav ul { margin-top: 15px; }
@@ -348,25 +329,15 @@
             <div class="contact-info">
                 <h3>REMKİM</h3>
                 <p style="margin-top: 15px; color: var(--gray);">Sorun yaşadığınız endüstriyel prosesler için numune talep edebilir, sahadaki operasyonel problemleriniz için teknik destek alabilirsiniz.</p>
-                <p style="margin-top: 30px;"><strong>E-posta:</strong> info@remkim.com (Geçici)</p>
-                <p style="margin-top: 10px;"><strong>Çalışma Saatleri:</strong> Projelendirme ve Saha Analizleri</p>
+                <p style="margin-top: 20px;"><strong>Çalışma Saatleri:</strong> Projelendirme ve Saha Analizleri</p>
             </div>
-            <div class="contact-form">
-                <form action="https://formspree.io/f/https://formspree.io/f/mnjyyqba" method="POST"> <!-- Formspree ücretsiz form altyapısı için -->
-                    <div class="form-group">
-                        <label>Ad Soyad / Firma Adı</label>
-                        <input type="text" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>E-posta Adresiniz</label>
-                        <input type="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Yaşadığınız Teknik Problem / İhtiyaç</label>
-                        <textarea name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Numune ve Teknik Bilgi Talep Et</button>
-                </form>
+            <div class="contact-action">
+                <h3>Hızlı Teknik Destek Hattı</h3>
+                <p style="color: var(--gray); margin-top: 10px;">Proses şartlarınızı ve numune taleplerinizi bize doğrudan WhatsApp üzerinden iletebilirsiniz.</p>
+                <!-- TELEFON_NUMARANIZ yazan yere numaranızı yazın (Örn: 5321234567) -->
+                <a href="https://wa.me/5063347024?text=Merhaba%20REMK%C4%B0M,%20end%C3%BCstriyel%20proseslerimiz%20i%C3%A7in%20teknik%20destek%20ve%20numune%20talep%20ediyoruz." class="whatsapp-btn" target="_blank">
+                    WhatsApp ile İletişime Geç
+                </a>
             </div>
         </div>
     </section>

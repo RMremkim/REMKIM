@@ -8,45 +8,43 @@
         :root { --dark: #0a192f; --accent: #00d2ff; --text: #e6f1ff; --card-bg: #112240; }
         body { 
             font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--dark);
-            background-image: linear-gradient(rgba(10,25,47,0.9), rgba(10,25,47,0.9)), url('https://images.unsplash.com/photo-1581092160607-ee2253207792?auto=format&fit=crop&w=1600');
+            background: linear-gradient(rgba(10,25,47,0.9), rgba(10,25,47,0.9)), url('img/bg.png');
             background-size: cover; background-attachment: fixed; color: var(--text);
         }
         
-        /* Navigasyon - Logo ile birlikte */
         nav { padding: 20px 10%; display: flex; align-items: center; border-bottom: 1px solid #233554; background: rgba(10,25,47,0.8); }
         .logo-img { height: 60px; margin-right: 20px; }
-        nav h1 { margin: 0; font-size: 1.8rem; }
         
-        .hero { padding: 40px 10%; text-align: center; }
+        .hero { padding: 60px 10%; text-align: center; }
         
-        /* Izgara Düzeni */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; padding: 20px 10%; }
+        .about-section { padding: 40px 10%; background: rgba(17,34,64,0.6); margin: 0 10%; border-radius: 15px; }
+        .about-section h2 { color: var(--accent); }
         
-        /* Kart Yapısı */
-        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #233554; transition: 0.3s; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 10%; }
+        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #233554; }
+        .card img { width: 100%; height: 200px; object-fit: contain; padding: 10px; box-sizing: border-box; background: transparent; }
+        .card-header { padding: 15px; font-weight: bold; color: var(--accent); }
+        .card-body { padding: 0 15px 15px; font-size: 0.9rem; }
         
-        /* Resimlerin Arka Plan Beyazlığını Kaldırdık (background: transparent) */
-        .card img { 
-            width: 100%; height: 250px; object-fit: contain; 
-            background: transparent; 
-            padding: 10px; box-sizing: border-box; 
-        }
-        
-        .card-header { padding: 20px; font-weight: bold; color: var(--accent); font-size: 1.1rem; }
-        .card-body { padding: 0 20px 20px; font-size: 0.95rem; }
-        
-        .whatsapp-btn { display: block; width: 250px; margin: 50px auto; background: #25d366; color: white; text-align: center; padding: 18px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
+        .whatsapp-btn { display: block; width: 250px; margin: 40px auto; background: #25d366; color: white; text-align: center; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <nav>
-    <img src="img/logo.png" alt="REMKİM Logo" class="logo-img">
+    <img src="img/logo.png" alt="Logo" class="logo-img">
     <h1>REMKİM</h1>
 </nav>
 
 <section class="hero">
-    <h2>Endüstriyel Kimyasallar ve Proses Mühendisliği</h2>
+    <h1>Endüstriyel Proses Mühendisliği</h1>
+    <p>Üretim hatlarınızda kesintisiz verimlilik ve uzman teknik çözümler.</p>
+</section>
+
+<section class="about-section">
+    <h2>Hakkımızda & Vizyonumuz</h2>
+    <p>REMKİM, endüstriyel proseslerin verimliliğini artırmak ve üretim maliyetlerini optimize etmek amacıyla kurulmuş bir mühendislik çözüm merkezidir. Sadece kimyasal tedariği değil, nozul tıkanmalarından korozyon önlemeye, kalıp korumadan ağır sanayi hijyenine kadar uçtan uca teknik danışmanlık sunuyoruz.</p>
+    <p><strong>Vizyonumuz:</strong> Sürdürülebilir kimya ve yüksek performanslı proses mühendisliği ile üretim dünyasında kesintisiz verimlilik standartlarını belirlemektir.</p>
 </section>
 
 <div class="grid">
@@ -57,7 +55,7 @@
     <div class="card"><img src="img/remguard.jpeg"><div class="card-header">REMGUARD</div><div class="card-body">Kalıp koruma ve yapışma önleyici katkılar.</div></div>
 </div>
 
-<a href="https://wa.me/5063347024" class="whatsapp-btn" target="_blank">WhatsApp ile Bilgi Al</a>
+<a href="https://wa.me/905XXXXXXXXXX" class="whatsapp-btn" target="_blank">Teknik Destek Al</a>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REMKİM | Endüstriyel Triboloji & Proses Mühendisliği</title>
+    <title>REMKİM | Endüstriyel Kimyasallar & Proses Mühendisliği</title>
     <style>
         :root { 
             --dark-bg: #030712; 
@@ -19,9 +19,7 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
             margin: 0; 
             background-color: var(--dark-bg);
-            background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.05), transparent),
-                        linear-gradient(rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.95)), 
-                        url('img/bg.png');
+            background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.05), transparent), linear-gradient(rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.95)), url('img/bg.png');
             background-size: cover; 
             background-attachment: fixed; 
             color: var(--text-main);
@@ -61,9 +59,6 @@
             letter-spacing: -0.05em;
             margin-bottom: 20px;
             color: #ffffff;
-            background: linear-gradient(135deg, #ffffff 40%, #00d2ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             display: block;
         }
 
@@ -157,13 +152,19 @@
             letter-spacing: 0.05em;
         }
 
+        .whatsapp-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 40px 0 80px 0;
+        }
+
         .whatsapp-btn { 
-            display: flex; 
+            display: inline-flex; 
             align-items: center;
             justify-content: center;
             gap: 12px;
-            width: 280px; 
-            margin: 60px auto; 
+            width: 290px; 
             background-color: var(--accent-green) !important; 
             color: #ffffff !important; 
             text-align: center; 
@@ -191,8 +192,6 @@
             .hero h1 { 
                 font-size: 2.1rem; 
                 color: #ffffff !important;
-                background: none !important;
-                -webkit-text-fill-color: #ffffff !important;
                 text-shadow: 0 2px 10px rgba(0,210,255,0.3);
             }
             .about-section { margin: 20px 5%; padding: 25px; }
@@ -208,7 +207,7 @@
 
 <section class="hero">
     <h1>Yüksek Performanslı Triboloji & Proses Mühendisliği</h1>
-    <p>Metal şekillendirme, kauçuk kalıplama ve endüstriyel yüzey işlem hatlarında maliyet optimizasyonu ve %90'a varan verimlilik artışı sağlayan niş teknolojiler.</p>
+    <p>Metal şekillendirme, kauçuk kalıplama ve endüstriyel yüzey işlem hatlarında maliyet optimizasyonu ve %90'a varan verimlilik artışı sağlayan prosese özel teknolojiler.</p>
 </section>
 
 <section class="about-section">
@@ -219,7 +218,7 @@
 <div class="grid">
     <!-- Ürün 1 -->
     <div class="card">
-        <img src="img/ultralife.png">
+        <img src="img/ultralife.png" alt="REMKİM ULTRALIFE">
         <div class="card-header">
             <span class="highlight-tag">Proses Bakım</span><br>
             REMKİM ULTRALIFE
@@ -229,7 +228,7 @@
     
     <!-- Ürün 2 -->
     <div class="card">
-        <img src="img/ultralifea.png">
+        <img src="img/ultralifea.png" alt="REMKİM ULTRALİFE A">
         <div class="card-header">
             <span class="highlight-tag">Performans Katkısı</span><br>
             REMKİM ULTRALİFE A
@@ -239,7 +238,7 @@
 
     <!-- Ürün 3 -->
     <div class="card">
-        <img src="img/ultralifeb.png">
+        <img src="img/ultralifeb.png" alt="REMKİM ULTRALİFE B">
         <div class="card-header">
             <span class="highlight-tag">Performans Koruma</span><br>
             REMKİM ULTRALİFE B
@@ -249,9 +248,9 @@
 
     <!-- Ürün 4 -->
     <div class="card">
-        <img src="img/remlubriflow.jpeg">
+        <img src="img/remlubriflow.jpeg" alt="REMLUBRIFLOW">
         <div class="card-header">
-            <span class="highlight-tag">Niş Triboloji</span><br>
+            <span class="highlight-tag">Tribolojik Sistemler</span><br>
             REMLUBRIFLOW
         </div>
         <div class="card-body">Filmaşin ve soğuk çekme operasyonları için geliştirilmiş, sürtünme katsayısını minimuma indiren yüksek performanslı yağlama katkı seti.</div>
@@ -259,7 +258,7 @@
 
     <!-- Ürün 5 -->
     <div class="card">
-        <img src="img/haddetozu.jpeg">
+        <img src="img/haddetozu.jpeg" alt="REMTRIBOCAL">
         <div class="card-header">
             <span class="highlight-tag">Ağır Sanayi Yağlama</span><br>
             REMTRIBOCAL Hadde Tozu
@@ -269,7 +268,7 @@
     
     <!-- Ürün 6 -->
     <div class="card">
-        <img src="img/remguard.jpeg">
+        <img src="img/remguard.jpeg" alt="REMGUARD">
         <div class="card-header">
             <span class="highlight-tag">Kalıp Koruma</span><br>
             REMGUARD
@@ -279,7 +278,7 @@
 
     <!-- Ürün 7 -->
     <div class="card">
-        <img src="img/endustriyelyikama.png">
+        <img src="img/endustriyelyikama.png" alt="Ultrasonik Alkali Yıkama">
         <div class="card-header">
             <span class="highlight-tag">Yüzey Hazırlık</span><br>
             Ultrasonik Alkali Yıkama Kimyasalı
@@ -289,5 +288,19 @@
 
     <!-- Ürün 8 -->
     <div class="card">
-        <img src="img/remmikro.png">
+        <img src="img/remmikro.png" alt="REMMIKRO">
         <div class="card-header">
+<span class="highlight-tag">Endüstriyel Hijyen</span><br>
+            REMMIKRO Kremsi El Yıkama Jeli
+        </div>
+        <div class="card-body">Ağır sanayi yağları, gres ve yaş boyayı cilde zarar vermeden temizleyen; mikronize yapısıyla lavabo giderlerini tıkamayan, koruyucu bariyerli işçi hijyen çözümü.</div>
+    </div>
+<!-- Ürün 9 -->
+    <div class="card">
+        <img src="img/remfresh.png" alt="REMFRESH">
+        <div class="card-header">
+<span class="highlight-tag">Tesis Bakım</span><br>
+            REMFRESH
+        </div>
+        <div class="card-body">Toplu endüstriyel kullanım alanlarında tuvalet ve banyo giderleri kaynaklı kötü kokuları kimyasal olarak nötralize eden, üremeyi engelleyen entegre koku kontrol ve periyodik hijyen bakım sistemi.</div>
+    </div>

@@ -3,69 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REMKİM | Endüstriyel Proses Mühendisliği</title>
+    <title>REMKİM | Endüstriyel Triboloji & Proses Mühendisliği</title>
     <style>
-        :root { --dark: #0a192f; --accent: #00d2ff; --text: #e6f1ff; --card-bg: #112240; }
-        body { 
-            font-family: 'Segoe UI', sans-serif; margin: 0; background-color: var(--dark);
-            background: linear-gradient(rgba(10,25,47,0.9), rgba(10,25,47,0.9)), url('img/bg.png');
-            background-size: cover; background-attachment: fixed; color: var(--text);
+        :root { 
+            --dark-bg: #030712; 
+            --panel-bg: #111827; 
+            --accent-blue: #00d2ff; 
+            --accent-green: #10b981;
+            --text-main: #f3f4f6; 
+            --text-muted: #9ca3af;
+            --border-color: #1f2937;
         }
         
-        nav { padding: 20px 10%; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #233554; background: rgba(10,25,47,0.8); width: 100%; box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
+            margin: 0; 
+            background-color: var(--dark-bg);
+            background: radial-gradient(circle at top right, rgba(0, 210, 255, 0.05), transparent),
+                        linear-gradient(rgba(3, 7, 18, 0.95), rgba(3, 7, 18, 0.95)), 
+                        url('img/bg.png');
+            background-size: cover; 
+            background-attachment: fixed; 
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+        
+        header { 
+            padding: 30px 10%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-bottom: 1px solid var(--border-color); 
+            background: rgba(17, 24, 39, 0.8); 
+            backdrop-filter: blur(10px);
+            width: 100%; 
+            box-sizing: border-box; 
+        }
         
         .logo-img { 
-            height: 200px; /* Buradan boyutunu değiştirebilirsin */
+            height: 120px; 
             width: auto; 
             display: block;
             margin: 0 auto;
+            filter: drop-shadow(0 0 10px rgba(0,210,255,0.2));
         }
 
-        .hero { padding: 60px 10%; text-align: center; }
+        .hero { 
+            padding: 80px 10% 40px; 
+            text-align: center; 
+            max-width: 900px;
+            margin: 0 auto;
+        }
         
-        .about-section { padding: 40px 10%; background: rgba(17,34,64,0.6); margin: 0 10%; border-radius: 15px; }
-        .about-section h2 { color: var(--accent); }
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.05em;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 40px 10%; }
-        .card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #233554; }
-        .card img { width: 100%; height: 350px; object-fit: contain; padding: 10px; box-sizing: border-box; background: transparent; }
-        .card-header { padding: 15px; font-weight: bold; color: var(--accent); }
-        .card-body { padding: 0 15px 15px; font-size: 0.9rem; }
+        .about-section { 
+            padding: 40px; 
+            background: rgba(17, 24, 39, 0.6); 
+            margin: 40px 10%; 
+            border-radius: 16px; 
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(5px);
+        }
         
-        .whatsapp-btn { display: block; width: 250px; margin: 40px auto; background: #25d366; color: white; text-align: center; padding: 15px; border-radius: 50px; text-decoration: none; font-weight: bold; }
+        .about-section h2 { 
+            color: var(--accent-blue); 
+            font-size: 1.8rem;
+            margin-top: 0;
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 15px;
+        }
+
+        .about-section p {
+            color: var(--text-main);
+            font-size: 1.05rem;
+        }
+        
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 30px; 
+            padding: 40px 10%; 
+        }
+        
+        .card { 
+            background: var(--panel-bg); 
+            border-radius: 16px; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 210, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.05);
+        }
+        
+        .card img { 
+            width: 100%; 
+            height: 280px; 
+            object-fit: contain; 
+            padding: 20px; 
+            box-sizing: border-box; 
+            background: rgba(3, 7, 18, 0.4);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .card-header { 
+            padding: 20px 20px 10px; 
+            font-size: 1.25rem;
+            font-weight: 700; 
+            color: #fff; 
+            letter-spacing: -0.02em;
+        }
+        
+        .card-body { 
+            padding: 0 20px 20px; 
+            font-size: 0.95rem; 
+            color: var(--text-muted);
+            flex-grow: 1;
+        }
+
+        .highlight-tag {
+            display: inline-block;
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--accent-blue);
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .whatsapp-btn { 
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 280px; 
+            margin: 60px auto; 
+            background: var(--accent-green); 
+            color: white; 
+            text-align: center; 
+            padding: 18px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 15px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .about-section { margin: 20px 5%; padding: 25px; }
+            .grid { padding: 20px 5%; }
+        }
     </style>
 </head>
 <body>
 
-<nav>
-    <img src="img/logo.png" alt="Logo" class="logo-img">
-</nav>
+<header>
+    <img src="img/logo.png" alt="REMKİM Logo" class="logo-img">
+</header>
 
 <section class="hero">
-    <h1>Endüstriyel Kimyasallar ve Proses Mühendisliği</h1>
-    <p>Tesislerinizde kesintisiz üretim ve verimlilik artışı için profesyonel çözümler.</p>
+    <h1>Yüksek Performanslı Triboloji & Proses Mühendisliği</h1>
+    <p>Metal şekillendirme, kauçuk kalıplama ve endüstriyel yüzey işlem hatlarında maliyet optimizasyonu ve %90'a varan verimlilik artışı sağlayan niş teknolojiler.</p>
 </section>
 
 <section class="about-section">
-    <h2>Hakkımızda & Vizyonumuz</h2>
-    <p>REMKİM, endüstriyel proseslerin verimliliğini artırmak ve üretim maliyetlerini optimize etmek amacıyla kurulmuş bir mühendislik çözüm merkezidir. Sadece kimyasal tedariği değil, alkali yıkama nozul/sprey tıkanmalarından korozyon önlemeye, filmaşin soğuk çekim işlemlerinizde kalıp korumadan galavniz prosesine, toplu kullanım yerlerinde ağır sanayi hijyenine kadar uçtan uca teknik danışmanlık sunuyoruz.</p>
-    <p><strong>Vizyonumuz:</strong> Sürdürülebilir kimya ve yüksek performanslı proses mühendisliği ile üretim dünyasında kesintisiz verimlilik standartlarını belirlemektir.</p>
+    <h2>Mühendislik ve Çözüm Ortağınız</h2>
+    <p>REMKİM, endüstriyel proseslerin verimliliğini maksimuma çıkarmak ve ağır sanayi üretim maliyetlerini düşürmek amacıyla kurulmuş ileri düzey bir teknoloji merkezidir. Sadece bir kimyasal tedarikçisi değil; alkali banyo optimizasyonlarından kalıp ömrü uzatmaya, döngüsel ekonomi odaklı tribolojik formülasyonlardan endüstriyel personel hijyenine kadar proseslerinize mühendislik zırhı kazandıran stratejik bir çözüm ortağıyız.</p>
 </section>
 
 <div class="grid">
-    <div class="card"><img src="img/ultralife.png"><div class="card-header">REMKİM ULTRALIFE</div><div class="card-body">Alkali Yıkama Suyu Ömrünü Uzatan, Nozul/Sprey Tıkanmalarını Önleyen Çözüm.</div></div>
-    <div class="card"><img src="img/remfresh.png"><div class="card-header">REMFRESH</div><div class="card-body">Giderlerde Koku Kontrol Sistemi, Hijyen Çözümü ve Periyodik Bakım.</div></div>
-    <div class="card"><img src="img/remmikro.png"><div class="card-header">REMMIKRO</div><div class="card-body">Endüstriyel El Temizleme jeli.</div></div>
-    <div class="card"><img src="img/remlubriflow.jpeg"><div class="card-header">REMLUBRIFLOW</div><div class="card-body">Yüksek Performanslı Filmaşin Yağlama Katkısı.</div></div>
-    <div class="card"><img src="img/remguard.jpeg"><div class="card-header">REMGUARD</div><div class="card-body">Filmaşin Soğuk Çekme Proseslerinde Kalıp Koruma ve Glaze önleyici Katkılar.</div></div>
-    <div class="card"><img src="img/endustriyelyikama.png"><div class="card-header">ULTRASONİK ENDÜSTRİYEL YIKAMA KİMYASALI</div><div class="card-body">Endüstriyel Ultrasonik Özellikte Alkali Yıkama Toz Kimyasalı.</div></div>
-    <div class="card"><img src="img/haddetozu.jpeg"><div class="card-header">KALSİYUM BAZLI HADDE TOZU</div><div class="card-body">Kalsiyum Bazlı Yüksek Hızlı Sistemler İçin Tribolojik Hadde Tozu.</div></div>
-    <div class="card"><img src="img/ultralifea.png"><div class="card-header">REMKİM ULTRALİFE A</div><div class="card-body">Alkali Banyo Performans Arttırıcı '' Yıkama Banyosunu değil, Performansı yeniler''.</div></div>
-    <div class="card"><img src="img/ultralifeb.png"><div class="card-header">REMKİM ULTRALİFE B</div><div class="card-body">Alkali Banyo Performans Koruyucu '' Yıkama Banyosunu değil, Performansı yeniler''.</div></div>
-</div>
-</div>
+    <!-- Ürün 1 -->
+    <div class="card">
+        <img src="img/ultralife.png">
+        <div class="card-header">
+            <span class="highlight-tag">Proses Bakım</span><br>
+            REMKİM ULTRALIFE
+        </div>
+        <div class="card-body">Alkali yıkama suyu ömrünü uzatan, nozul ve sprey hatlarındaki tıkanmaları engelleyen banyo ömür uzatıcı sistem.</div>
+    </div>
+    
+    <!-- Ürün 2 -->
+    <div class="card">
+        <img src="img/ultralifea.png">
+        <div class="card-header">
+            <span class="highlight-tag">Performans Katkısı</span><br>
+            REMKİM ULTRALİFE A
+        </div>
+        <div class="card-body">Alkali banyo performans arttırıcı teknoloji. Yıkama banyosunu tasfiye etmek yerine, mevcut kimyasal performansı en üst seviyede yeniler.</div>
+    </div>
 
-<a href="https://wa.me/5063347024" class="whatsapp-btn" target="_blank">Teknik Destek Al</a>
+    <!-- Ürün 3 -->
+    <div class="card">
+        <img src="img/ultralifeb.png">
+        <div class="card-header">
+            <span class="highlight-tag">Performans Koruma</span><br>
+            REMKİM ULTRALİFE B
+        </div>
+        <div class="card-body">Alkali banyo kararlılık ve performans koruyucu sistemi. Sürekli hat operasyonlarında kimyasal dengenin stabil kalmasını sağlar.</div>
+    </div>
 
-</body>
-</html>
+    <!-- Ürün 4 -->
+    <div class="card">
+        <img src="img/remlubriflow.jpeg">
+        <div class="card-header">
+            <span class="highlight-tag">Niş Triboloji</span><br>
+            REMLUBRIFLOW
+        </div>
+        <div class="card-body">Filmaşin ve soğuk çekme operasyonları için geliştirilmiş, sürtünme katsayısını minimuma indiren yüksek performanslı yağlama katkı seti.</div>
+    </div>
+
+    <!-- Ürün 5 -->
+    <div class="card">
+        <img src="img/haddetozu.jpeg">
+        <div class="card-header">
+            <span class="highlight-tag">Ağır Sanayi Yağlama</span><br>
+            REMTRIBOCAL Hadde Tozu
+        </div>
+        <div class="card-body">Kalsiyum ve Sodyum bazlı, yüksek hızlı mekanik sistemler için tasarlanmış, üstün film mukavemetine sahip tribolojik tel çekme tozu.</div>
+    </div>
+    
+    <!-- Ürün 6 -->
+    <div class="card">
+        <img src="img/remguard.jpeg">
+        <div class="card-header">
+            <span class="highlight-tag">Kalıp Koruma</span><br>
+            REMGUARD
+        </div>
+        <div class="card-body">Soğuk şekillendirme ve çekim proseslerinde kalıp aşınmalarını önleyen, glaze oluşumunu engelleyici yüksek kararlılık katkısı.</div>
+    </div>
+
+    <!-- Ürün 7 -->
+    <div class="card">
+        <img src="img/endustriyelyikama.png">
+        <div class="card-header">
+            <span class="highlight-tag">Yüzey Hazırlık</span><br>
+            Ultrasonik Alkali Yıkama Kimyasalı
+        </div>
+        <div class="card-body">Yaş boya, kaplama ve galvaniz öncesi endüstriyel ultrasonik sistemler için geliştirilmiş, yüksek etki gücüne sahip toz temizlik kimyasalı.</div>
+    </div>
+
+    <!-- Ürün 8 -->
+    <div class="card">
+        <img src="img/remmikro.png">
+        <div class="card-header">
+            <span class="highlight-tag">Endüstriyel Hijyen</span><br>
+            REMMIKRO Kremsi El Jeli
+        </div>
+        <div class="card-body">Ağır sanayi yağları, gres ve yaş boyayı cilde zarar vermeden temizleyen; mikronize yapısıyla lavabo giderlerini tıkamayan, koruyucu bariyerli işçi hijyen çözümü.</div>
+    </div>
+
+    <!-- Ürün 9 -->
+    <div class="card">
+        <img src="img/remfresh.png">
+        <div class="card-header">

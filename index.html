@@ -60,9 +60,12 @@
             font-weight: 800;
             letter-spacing: -0.05em;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 30%, var(--accent-blue));
+            /* Mobil cihazların renk modlarında kararmayı önlemek için renkler kesinleştirildi */
+            color: #ffffff;
+            background: linear-gradient(135deg, #ffffff 40%, #00d2ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            display: block;
         }
 
         .hero p {
@@ -159,11 +162,11 @@
             display: flex; 
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             width: 280px; 
             margin: 60px auto; 
-            background: var(--accent-green); 
-            color: white; 
+            background-color: var(--accent-green) !important; 
+            color: #ffffff !important; 
             text-align: center; 
             padding: 18px; 
             border-radius: 50px; 
@@ -179,8 +182,20 @@
             box-shadow: 0 15px 25px rgba(16, 185, 129, 0.3);
         }
 
+        .whatsapp-btn svg {
+            fill: #ffffff;
+            width: 24px;
+            height: 24px;
+        }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
+            .hero h1 { 
+                font-size: 2.1rem; 
+                color: #ffffff !important;
+                background: none !important;
+                -webkit-text-fill-color: #ffffff !important;
+                text-shadow: 0 2px 10px rgba(0,210,255,0.3);
+            }
             .about-section { margin: 20px 5%; padding: 25px; }
             .grid { padding: 20px 5%; }
         }
@@ -275,15 +290,3 @@
 
     <!-- Ürün 8 -->
     <div class="card">
-        <img src="img/remmikro.png">
-        <div class="card-header">
-            <span class="highlight-tag">Endüstriyel Hijyen</span><br>
-            REMMIKRO Kremsi El Jeli
-        </div>
-        <div class="card-body">Ağır sanayi yağları, gres ve yaş boyayı cilde zarar vermeden temizleyen; mikronize yapısıyla lavabo giderlerini tıkamayan, koruyucu bariyerli işçi hijyen çözümü.</div>
-    </div>
-
-    <!-- Ürün 9 -->
-    <div class="card">
-        <img src="img/remfresh.png">
-        <div class="card-header">

@@ -1,0 +1,12 @@
+body{margin:0;font-family:Arial,sans-serif;background:#f4f6f9;color:#222}
+.container{width:min(1200px,92%);margin:auto}
+.topbar{background:#0b2340;color:#fff;position:sticky;top:0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img{width:70px}
+nav a{color:#fff;text-decoration:none;margin-left:25px}
+.hero{background:linear-gradient(135deg,#0b2340,#0f5ea8);color:#fff;padding:100px 0;text-align:center}
+.btn{display:inline-block;padding:14px 28px;background:#00b050;color:#fff;border-radius:40px;text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:30px 0}
+.card{background:#fff;padding:30px;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+footer{background:#0b2340;color:#fff;padding:40px 0;text-align:center;margin-top:50px}

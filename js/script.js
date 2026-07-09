@@ -60,3 +60,46 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("REMKIM WEB V3 çalışıyor.");
 
 });
+/*==================================================
+PRODUCT FILTER
+==================================================*/
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const cards = document.querySelectorAll(".card");
+
+filterButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+filterButtons.forEach(btn=>btn.classList.remove("active"));
+
+button.classList.add("active");
+
+const filter=button.dataset.filter;
+
+cards.forEach(card=>{
+
+if(filter==="all"){
+
+card.classList.remove("hide");
+
+}else{
+
+if(card.dataset.category===filter){
+
+card.classList.remove("hide");
+
+}else{
+
+card.classList.add("hide");
+
+}
+
+}
+
+});
+
+});
+
+});

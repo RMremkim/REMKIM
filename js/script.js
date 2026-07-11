@@ -1,105 +1,204 @@
-/* ==========================================
-   REMKIM WEB V3
-========================================== */
+// REMKIM V6 starter
+/*==================================================
+SCROLL REVEAL
+==================================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+const reveals = document.querySelectorAll(".reveal");
 
-    // Menü linklerine yumuşak geçiş
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
+function revealSections() {
 
-        link.addEventListener("click", function (e) {
+    reveals.forEach(section => {
 
-            const target = document.querySelector(this.getAttribute("href"));
+        const windowHeight = window.innerHeight;
 
-            if (target) {
+        const top = section.getBoundingClientRect().top;
 
-                e.preventDefault();
+        if (top < windowHeight - 120) {
 
-                target.scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
-            }
-
-        });
-
-    });
-
-    // Sayfa aşağı indikçe Header gölgesi
-    const header = document.querySelector("header");
-
-    window.addEventListener("scroll", () => {
-
-        if (!header) return;
-
-        if (window.scrollY > 40) {
-
-            header.style.boxShadow = "0 10px 30px rgba(0,0,0,.25)";
-
-        } else {
-
-            header.style.boxShadow = "0 6px 18px rgba(0,0,0,.12)";
+            section.classList.add("active");
 
         }
 
     });
 
-    // Kart hover hazırlığı
-    document.querySelectorAll(".card").forEach(card => {
+}
 
-        card.addEventListener("mouseenter", () => {
+window.addEventListener("scroll", revealSections);
 
-            card.style.transition = ".35s";
+window.addEventListener("load", revealSections);
+/*==================================================
+HEADER SCROLL
+==================================================*/
 
-        });
+const header = document.querySelector(".site-header");
 
-    });
+window.addEventListener("scroll", () => {
 
-    console.log("REMKIM WEB V3 çalışıyor.");
+    if(window.scrollY > 80){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
 
 });
 /*==================================================
-PRODUCT FILTER
+ACTIVE MENU
 ==================================================*/
 
-const filterButtons = document.querySelectorAll(".filter-btn");
+const sections=document.querySelectorAll("section[id]");
+const navLinks=document.querySelectorAll("nav a");
 
-const cards = document.querySelectorAll(".card");
+window.addEventListener("scroll",()=>{
 
-filterButtons.forEach(button=>{
+    let current="";
 
-button.addEventListener("click",()=>{
+    sections.forEach(section=>{
 
-filterButtons.forEach(btn=>btn.classList.remove("active"));
+        const top=section.offsetTop-140;
+        const height=section.offsetHeight;
 
-button.classList.add("active");
+        if(scrollY>=top){
 
-const filter=button.dataset.filter;
+            current=section.getAttribute("id");
 
-cards.forEach(card=>{
+        }
 
-if(filter==="all"){
+    });
 
-card.classList.remove("hide");
+    navLinks.forEach(link=>{
 
-}else{
+        link.classList.remove("active");
 
-if(card.dataset.category===filter){
+        if(link.getAttribute("href")==="#"+current){
 
-card.classList.remove("hide");
+            link.classList.add("active");
 
-}else{
+        }
 
-card.classList.add("hide");
+    });
 
-}
+});
+/*==================================================
+MOBILE MENU
+==================================================*/
 
-}
+const menuToggle=document.querySelector(".menu-toggle");
+const nav=document.querySelector("nav");
+
+menuToggle.addEventListener("click",()=>{
+
+    nav.classList.toggle("open");
+
+});
+/*==================================================
+MENU TOGGLE ANIMATION
+==================================================*/
+
+menuToggle.addEventListener("click",()=>{
+
+    menuToggle.classList.toggle("active");
+
+});
+/*==================================================
+AUTO CLOSE MENU
+==================================================*/
+
+const menuLinks=document.querySelectorAll("nav a");
+
+menuLinks.forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        nav.classList.remove("open");
+
+        menuToggle.classList.remove("active");
+
+    });
+
+});
+/*==================================================
+CLICK OUTSIDE
+==================================================*/
+
+document.addEventListener("click",(e)=>{
+
+    if(
+
+        !nav.contains(e.target)
+
+        &&
+
+        !menuToggle.contains(e.target)
+
+    ){
+
+        nav.classList.remove("open");
+
+        menuToggle.classList.remove("active");
+
+    }
+
+});
+/*==================================================
+CLOSE MENU ON SCROLL
+==================================================*/
+
+window.addEventListener("scroll",()=>{
+
+    nav.classList.remove("open");
+
+    menuToggle.classList.remove("active");
+
+});
+/*==================================================
+PAGE PROGRESS
+==================================================*/
+
+const progressBar=document.querySelector(".progress-bar");
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop=window.pageYOffset;
+
+    const docHeight=document.documentElement.scrollHeight-window.innerHeight;
+
+    const progress=(scrollTop/docHeight)*100;
+
+    progressBar.style.width=progress+"%";
+
+});
+/*==================================================
+BACK TO TOP
+==================================================*/
+
+const backToTop=document.getElementById("backToTop");
+
+window.addEventListener("scroll",()=>{
+
+    if(window.scrollY>500){
+
+        backToTop.classList.add("show");
+
+    }else{
+
+        backToTop.classList.remove("show");
+
+    }
 
 });
 
-});
+backToTop.addEventListener("click",()=>{
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
 
 });

@@ -3818,9 +3818,9 @@ UZMANLIK ALANLARI
 
     display:grid;
 
-    grid-template-columns:320px 1fr;
+    grid-template-columns:280px 1fr;
 
-    gap:60px;
+    gap:70px;
 
     align-items:center;
 
@@ -3840,7 +3840,7 @@ UZMANLIK ALANLARI
 
 .expertise-btn{
 
-    background:none;
+    background:transparent;
 
     border:none;
 
@@ -3858,17 +3858,17 @@ UZMANLIK ALANLARI
 
     color:#5f6675;
 
-    transition:.30s;
+    transition:all .25s ease;
 
 }
 
 .expertise-btn:hover{
 
-    color:#0A5FFF;
+    color:#111827;
 
-    border-color:#0A5FFF;
+    border-left-color:#0A5FFF;
 
-    background:#f8fafc;
+    background:transparent;
 
 }
 
@@ -3876,9 +3876,9 @@ UZMANLIK ALANLARI
 
     color:#111827;
 
-    border-color:#0A5FFF;
+    border-left-color:#0A5FFF;
 
-    background:#f8fafc;
+    background:transparent;
 
 }
 
@@ -3892,7 +3892,7 @@ UZMANLIK ALANLARI
 
     padding:45px;
 
-    min-height:380px;
+    min-height:430px;
 
     transition:
 
@@ -3915,9 +3915,22 @@ UZMANLIK ALANLARI
 
     align-items:center;
 
-    gap:14px;
+    gap:12px;
+
+    margin:35px 0 18px;
+
+    color:#0A5FFF;
+
+    font-size:.82rem;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    text-transform:uppercase;
 
 }
+
 .expertise-title::after{
 
     content:"";
@@ -3926,7 +3939,7 @@ UZMANLIK ALANLARI
 
     height:1px;
 
-    background:#dbe4f0;
+    background:linear-gradient(to right,#d9e5ff,transparent);
 
 }
 
@@ -3934,7 +3947,11 @@ UZMANLIK ALANLARI
 
     font-size:2rem;
 
-    margin-bottom:10px;
+    margin-bottom:14px;
+
+    padding-bottom:14px;
+
+    border-bottom:1px solid #edf1f7;
 
 }
 

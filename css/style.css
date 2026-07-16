@@ -1191,6 +1191,8 @@ WHY REMKİM
 
     counter-increment:whyCounter;
 
+    outline:2px solid red;
+
 }
 
 .why-card::before{
@@ -1462,6 +1464,8 @@ PRODUCTS
 
     overflow:hidden;
 
+    outline:2px solid blue;
+
 }
 
 .product-card::before{
@@ -1488,11 +1492,6 @@ PRODUCTS
 
 }
 
-.product-card{
-
-    transition:.35s ease;
-
-}
 
 .product-card:hover{
 
@@ -3862,13 +3861,6 @@ V7.0
 
 }
 
-.product-card p{
-
-    line-height:1.8;
-
-    color:#5f6675;
-
-}
 
 .product-link{
 

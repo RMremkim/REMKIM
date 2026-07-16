@@ -4053,3 +4053,252 @@ UZMANLIK ALANLARI
     font-weight:600;
 
 }
+
+/*==================================================
+RESPONSIVE DESIGN
+==================================================*/
+@media (max-width:992px){
+
+.container{
+
+    width:92%;
+
+}
+
+/* HERO */
+
+.hero-content{
+
+    display:grid;
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+    gap:60px;
+
+}
+
+.hero-left{
+
+    order:1;
+
+}
+
+.hero-right{
+
+    order:2;
+
+}
+
+.hero-buttons{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-stats{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+/* Hakkımızda */
+
+.about-grid{
+
+    grid-template-columns:1fr;
+
+    gap:50px;
+
+}
+
+/* Neden REMKİM */
+
+.why-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* Proses */
+
+.process-flow{
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.flow-line{
+
+    width:2px;
+
+    height:45px;
+
+}
+
+/* Ürünler */
+
+.product-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* Performans */
+
+.performance-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+/* Uzmanlık */
+
+.expertise-wrapper{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.expertise-menu{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.expertise-btn{
+
+    border-left:none;
+
+    border-bottom:3px solid transparent;
+
+}
+
+.expertise-btn.active{
+
+    border-left:none;
+
+    border-bottom:3px solid #0A5FFF;
+
+}
+
+}
+/*==================================================
+MOBILE
+==================================================*/
+
+@media (max-width:576px){
+
+/* Genel */
+
+section{
+
+    padding:80px 0;
+
+}
+
+.container{
+
+    width:92%;
+
+}
+
+/* Başlıklar */
+
+h1{
+
+    font-size:2.8rem;
+
+    line-height:1.1;
+
+}
+
+h2{
+
+    font-size:2.2rem;
+
+    line-height:1.2;
+
+}
+
+.section-text{
+
+    font-size:1rem;
+
+}
+
+/* HERO */
+
+.hero{
+
+    min-height:auto;
+
+    padding-top:120px;
+
+}
+
+.hero-content{
+
+    gap:45px;
+
+}
+
+.hero-left{
+
+    text-align:center;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+    width:100%;
+
+    gap:15px;
+
+}
+
+.hero-buttons a{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.hero-stats{
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.hero-right{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+.network{
+
+    transform:scale(.72);
+
+    transform-origin:center;
+
+}

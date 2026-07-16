@@ -2395,6 +2395,30 @@ MOBILE
     }
 
 }
+
+@media(max-width:576px){
+
+.network{
+
+    width:280px;
+
+    height:280px;
+
+    margin:auto;
+
+}
+
+.network-core{
+
+    width:120px;
+
+    height:120px;
+
+    font-size:1.3rem;
+
+}
+
+}
 /*==================================================
 MENU TOGGLE ANIMATION
 ==================================================*/
@@ -4301,4 +4325,8 @@ h2{
 
     transform-origin:center;
 
+}
+html,
+body{
+    overflow-x:hidden;
 }

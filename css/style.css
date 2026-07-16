@@ -1151,15 +1151,17 @@ WHY REMKİM
 
 }
 
-.why-grid{
+..why-grid{
 
     display:grid;
 
-    grid-template-columns:repeat(2,1fr);
+    grid-template-columns:repeat(2,minmax(0,1fr));
 
     gap:35px;
 
     margin-top:70px;
+
+    align-items:stretch;
 
 }
 
@@ -1169,9 +1171,15 @@ WHY REMKİM
 
     overflow:hidden;
 
-    padding:45px;
+    display:flex;
 
-    background:#ffffff;
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    padding:40px;
+
+    background:#fff;
 
     border:1px solid #e6eef5;
 
@@ -1249,17 +1257,20 @@ WHY REMKİM
 
     font-size:24px;
 
+    line-height:1.3;
+
     color:#0b2238;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
 
 }
-
 .why-card p{
 
     color:#627789;
 
-    line-height:1.8;
+    line-height:1.75;
+
+    flex:1;
 
 }
 /*==================================================
@@ -2244,10 +2255,17 @@ TABLET
 
     .why-grid{
 
-        grid-template-columns:1fr;
+    display:grid;
+
+    grid-template-columns:repeat(2,minmax(0,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+    align-items:stretch;
 
     }
-
     .product-grid{
 
         grid-template-columns:repeat(2,1fr);

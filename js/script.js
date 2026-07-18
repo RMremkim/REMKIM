@@ -191,11 +191,15 @@ window.addEventListener("scroll",()=>{
 
 });
 
-backToTop.addEventListener("click",()=>{
+backToTop.addEventListener("click", (e) => {
 
-    window.scrollTo({
+    e.preventDefault();
+
+    window.scroll({
 
         top:0,
+
+        left:0,
 
         behavior:"smooth"
 

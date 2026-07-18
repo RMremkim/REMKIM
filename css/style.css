@@ -1189,13 +1189,19 @@ ABOUT
 
 .feature-card h4{
 
-    font-size:1.15rem;
+    margin:12px 0 18px;
 
-    margin:12px 0;
+    min-height:2.8em;
 
-    color:var(--text);
+    display:flex;
 
-    font-weight:700;
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    line-height:1.35;
 
 }
 
@@ -3869,29 +3875,32 @@ V7.0
 
     font-size:.9rem;
 
+    display:block;
+
+    margin-top:14px;
+
+    text-align:center;
+
 }
 
 .family-list span{
 
-    color:#5f6675;
+    display:inline-block;
 
-    padding-left:14px;
+    align-self:center;
 
-    position:relative;
+    padding:6px 14px;
 
-}
+    border-radius:999px;
 
-.family-list span::before{
-
-    content:"•";
-
-    position:absolute;
-
-    left:0;
+    background:#eef4ff;
 
     color:#0A5FFF;
 
+    font-weight:500;
+
 }
+
 .product-card h4{
 
     font-size:1rem;

@@ -42,14 +42,90 @@ REMKIM DESIGN SYSTEM
 
     --transition:.35s ease;
 
+    /* Card System */
+
+    --card-radius:22px;
+    --card-border:1px solid var(--border);
+    --card-shadow:0 15px 40px rgba(0,0,0,.05);
+    --card-transition:var(--transition);
+
+    /* Container */
+
+    --container:1200px;
+    --container-width:min(var(--container),92%);
+
+    /* Header */
+
+   --header-height:82px;
+   --header-height-scroll:68px;
+
+    /* Z-index */
+
+   --z-header:9999;
+   --z-overlay:5;
+   --z-content:2;
+
 }
-body{margin:0;font-family:Arial,sans-serif}.container{width:min(1200px,92%);margin:auto}.hero{min-height:70vh;display:flex;align-items:center;background:#0a2342;color:#fff}.site-header{padding:20px 0}
 
 html{
 
     scroll-behavior:smooth;
 
 }
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial,sans-serif;
+
+    color:var(--text);
+
+    background:var(--background);
+
+    overflow-x:hidden;
+
+    line-height:1.6;
+
+}
+
+.container{
+
+    width:var(--container-width);
+
+    margin-inline:auto;
+
+}
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+
 
 /*==================================================
 HEADER
@@ -64,7 +140,7 @@ HEADER
 
     width:100%;
 
-    z-index:9999;
+    z-index:var(--z-header);
 
     background:rgba(5,18,33,.68);
 
@@ -82,7 +158,7 @@ HEADER
 
 .site-header .container{
 
-    height:82px;
+    height:var(--header-height);
 
     display:flex;
 
@@ -255,7 +331,7 @@ nav a.active::after{
 
 .site-header.scrolled .container{
 
-    height:68px;
+    height:var(--header-height-scroll);
 
 }
 
@@ -343,11 +419,7 @@ HERO
 
     position:relative;
 
-    z-index:5;
-
-    position:relative;
-
-    z-index:2;
+    z-index:var(--z-content);
 
 }
 
@@ -447,8 +519,6 @@ position:relative;
 .btn-primary:hover{
 
 transform:translateY(-5px);
-
-box-shadow:0 25px 45px rgba(0,140,255,.45);
 
 box-shadow:
 
@@ -1012,7 +1082,7 @@ ABOUT
 
     padding:140px 0;
 
-    background:#ffffff;
+    background:var(--white);
 
 }
 
@@ -1052,7 +1122,7 @@ ABOUT
 
     margin-bottom:30px;
 
-    color:#0b2238;
+    color:var(--text);
 
 }
 
@@ -1086,18 +1156,17 @@ ABOUT
 
 .feature-card{
 
-    background:#ffffff;
-
-    border-radius:18px;
+    background:var(--white);
 
     padding:30px;
 
-    border:1px solid #e5edf5;
+    border:var(--card-border);
 
-    transition:.35s;
+    border-radius:18px;
 
     box-shadow:0 15px 40px rgba(0,0,0,.04);
 
+    transition:var(--card-transition);
 }
 
 .feature-card:hover{
@@ -1112,7 +1181,7 @@ ABOUT
 
 .feature-card h3{
 
-    color:#0b2238;
+    color:var(--text);
 
     margin-bottom:14px;
 
@@ -1124,7 +1193,7 @@ ABOUT
 
     margin:12px 0;
 
-    color:var(--dark);
+    color:var(--text);
 
     font-weight:700;
 
@@ -1145,13 +1214,13 @@ WHY REMKİM
 
     padding:140px 0;
 
-    background:#ffffff;
+    background:var(--white);
 
     counter-reset:whyCounter;
 
 }
 
-..why-grid{
+.why-grid{
 
     display:grid;
 
@@ -1181,18 +1250,17 @@ WHY REMKİM
 
     background:#fff;
 
-    border:1px solid #e6eef5;
+    border:var(--card-border);
 
-    border-radius:22px;
+    border-radius:var(--card-radius);
 
-    box-shadow:0 15px 40px rgba(0,0,0,.05);
+    box-shadow:var(--card-shadow);
 
-    transition:.35s;
+    transition:var(--card-transition);
 
     counter-increment:whyCounter;
 
-    outline:2px solid red;
-
+    
 }
 
 .why-card::before{
@@ -1261,7 +1329,7 @@ WHY REMKİM
 
     line-height:1.3;
 
-    color:#0b2238;
+    color:var(--text);
 
     margin-bottom:16px;
 
@@ -1365,7 +1433,7 @@ PROCESS
 
     box-shadow:0 15px 40px rgba(34,184,255,.25);
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -1414,7 +1482,7 @@ PRODUCTS
 
     padding:150px 0;
 
-    background:#ffffff;
+    background:var(--white);
 
 }
 
@@ -1422,7 +1490,7 @@ PRODUCTS
 
     font-size:52px;
 
-    color:#0b2238;
+    color:var(--text);
 
     margin:20px 0;
 
@@ -1450,21 +1518,19 @@ PRODUCTS
 
 .product-card{
 
-    background:#ffffff;
+    background:var(--white);
 
-    border:1px solid #e5edf5;
+    border:var(--card-border);
 
-    border-radius:22px;
+    border-radius:var(--card-radius);
 
     padding:38px;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
     position:relative;
 
     overflow:hidden;
-
-    outline:2px solid blue;
 
 }
 
@@ -1488,7 +1554,7 @@ PRODUCTS
 
     transform-origin:left;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -1509,7 +1575,7 @@ PRODUCTS
 
 .product-card h3{
 
-    color:#0b2238;
+    color:var(--text);
 
     margin-bottom:18px;
 
@@ -1619,7 +1685,7 @@ PRODUCTS
 
     margin-bottom:8px;
 
-    color:var(--dark);
+    color:var(--text);
 
 }
 
@@ -1663,7 +1729,7 @@ INDUSTRIES
 
     padding:150px 0;
 
-    background:#f6f9fc;
+    background:var(--background);
 
 }
 
@@ -1673,7 +1739,7 @@ INDUSTRIES
 
     margin:20px 0;
 
-    color:#0b2238;
+    color:var(--text);
 
 }
 
@@ -1697,19 +1763,19 @@ INDUSTRIES
 
 .industry-card{
 
-    background:#ffffff;
+    background:var(--white);
 
     border-radius:20px;
 
     padding:40px 28px;
 
-    border:1px solid #e4edf5;
+    border:var(--card-border);
 
     position:relative;
 
     overflow:hidden;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
     min-height:180px;
 
@@ -1736,7 +1802,7 @@ INDUSTRIES
 
     opacity:0;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -1774,7 +1840,7 @@ INDUSTRIES
 
     font-size:24px;
 
-    color:#0b2238;
+    color:var(--text);
 
     z-index:2;
 
@@ -1842,9 +1908,7 @@ CTA
 
     position:relative;
 
-    z-index:2;
-
-    position:relative;
+    z-index:var(--z-content);
 
 }
 
@@ -1899,7 +1963,7 @@ CONTACT
 
     padding:150px 0;
 
-    background:#ffffff;
+    background:var(--white);
 
 }
 
@@ -1921,7 +1985,7 @@ CONTACT
 
     margin:20px 0;
 
-    color:#0b2238;
+    color:var(--text);
 
 }
 
@@ -1945,13 +2009,13 @@ CONTACT
 
     padding:22px 28px;
 
-    border:1px solid #e4edf5;
+    border:var(--card-border);
 
     border-radius:16px;
 
     margin-bottom:18px;
 
-    transition:.30s;
+    transition:var(--card-transition);
 
 }
 
@@ -1965,7 +2029,7 @@ CONTACT
 
 .info-box h3{
 
-    color:#0b2238;
+    color:var(--text);
 
     margin-bottom:8px;
 
@@ -1987,7 +2051,7 @@ CONTACT
 
     padding:40px;
 
-    border-radius:22px;
+    border-radius:var(--card-radius);
 
     box-shadow:0 20px 45px rgba(0,0,0,.06);
 
@@ -2019,7 +2083,7 @@ CONTACT
 
     outline:none;
 
-    transition:.30s;
+    transition:var(--card-transition);
 
     resize:vertical;
 
@@ -2118,7 +2182,7 @@ FOOTER
 
     margin-bottom:14px;
 
-    transition:.30s;
+    transition:var(--card-transition);
 
 }
 
@@ -2231,40 +2295,12 @@ TABLET
 
 @media(max-width:992px){
 
-    .hero-container{
-
-    display:grid;
-
-    grid-template-columns:1.1fr .9fr;
-
-    align-items:center;
-
-    gap:70px;
-
-    position:relative;
-
-    z-index:2;
-
-}
     .hero-right{
 
         order:-1;
 
     }
 
-    .why-grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,minmax(0,1fr));
-
-    gap:35px;
-
-    margin-top:70px;
-
-    align-items:stretch;
-
-    }
     .product-grid{
 
         grid-template-columns:repeat(2,1fr);
@@ -2296,7 +2332,6 @@ TABLET
 }
 
 }
-
 /*--------------------------------------------------
 MOBILE
 --------------------------------------------------*/
@@ -2323,9 +2358,9 @@ MOBILE
 
         padding:45px 30px;
 
-        transition:.40s;
+        transition:var(--transition);
 
-        z-index:999;
+        z-index:var(--z-overlay);
 
     }
 
@@ -2430,9 +2465,12 @@ MOBILE
 
 }
 
+@media (max-width:768px){
+
 /*==========================
 HEADER MOBILE
 ==========================*/
+
 
 .site-header .container{
 
@@ -2522,7 +2560,7 @@ HEADER MOBILE
 
 }
 
-.mobile-toggle{
+.menu-toggle{
 
     display:flex;
 
@@ -2543,6 +2581,8 @@ HEADER MOBILE
     cursor:pointer;
 
     z-index:10001;
+
+}
 
 }
 
@@ -2608,7 +2648,7 @@ PREMIUM CARD EFFECT
 
     transform:skewX(-25deg);
 
-    transition:left .8s ease;
+    transition:left .8s var(--transition);
 
     pointer-events:none;
 
@@ -2707,6 +2747,8 @@ body{
 
     animation:pageFade .7s ease;
 
+    overflow-x:hidden;
+
 }
 
 @keyframes pageFade{
@@ -2728,20 +2770,6 @@ body{
 GLOBAL RADIUS
 ==================================================*/
 
-.hero-circle,
-.why-card,
-.product-card,
-.industry-card,
-.contact-form,
-.info-box,
-.footer,
-.btn-primary,
-.btn-outline,
-.btn-header{
-
-    border-radius:22px;
-
-}
 /*==================================================
 GLOBAL CARD SYSTEM
 ==================================================*/
@@ -2752,11 +2780,11 @@ GLOBAL CARD SYSTEM
 .info-box,
 .contact-form{
 
-    border-radius:var(--radius);
+    border-radius:var(--card-radius);
 
-    transition:var(--transition);
+    transition:var(--card-transition);
 
-    box-shadow:var(--shadow-sm);
+    box-shadow:var(--card-shadow);
 
 }
 
@@ -2856,7 +2884,7 @@ READABILITY
 
 p{
 
-    line-height:1.85;
+    line-height:1.8;
 
 }
 
@@ -2891,7 +2919,7 @@ SVG ICON SYSTEM
 
     box-shadow:0 18px 35px rgba(20,159,233,.20);
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -2940,7 +2968,7 @@ CONTACT INFO
 
     border-radius:14px;
 
-    background:#eef7fd;
+    background:rgba(20,159,233,.08);
 
     display:flex;
 
@@ -3016,11 +3044,11 @@ IMAGE PLACEHOLDER
 
     overflow:hidden;
 
-    border-radius:24px;
+    border-radius:var(--card-radius);
 
     background:linear-gradient(135deg,#f7fbff,#edf6fc);
 
-    border:1px solid #dbe8f3;
+    border:var(--card-border);
 
     min-height:320px;
 
@@ -3052,7 +3080,7 @@ MICRO INTERACTIONS
 a,
 button{
 
-    transition:all .30s ease;
+    transition:var(--transition);
 
 }
 
@@ -3258,7 +3286,7 @@ CARD TOP BORDER
 
     transform-origin:left;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -3316,7 +3344,7 @@ PROGRESS BAR
 
     background:linear-gradient(90deg,#149fe9,#54c8ff);
 
-    z-index:10000;
+    z-index:var(--z-header);
 
     transition:width .12s linear;
 
@@ -3355,7 +3383,7 @@ BACK TO TOP
 
     transform:translateY(20px);
 
-    transition:.35s;
+    transition:var(--card-transition);
 
     box-shadow:0 15px 35px rgba(20,159,233,.35);
 
@@ -3519,7 +3547,7 @@ PRODUCT NOTE
 
     margin-top:18px;
 
-    color:#6f8394;
+    color:var(--muted);
 
     font-size:14px;
 
@@ -3548,7 +3576,7 @@ PRODUCT FEATURES
 
     margin-bottom:10px;
 
-    color:#4f6476;
+    color:var(--muted);
 
     font-size:15px;
 
@@ -3595,7 +3623,7 @@ PRODUCT META
 
     border-radius:999px;
 
-    background:#eef7fd;
+    background:rgba(20,159,233,.08);
 
     color:var(--primary);
 
@@ -3645,7 +3673,7 @@ V7.0
 
     line-height:1.9;
 
-    color:#666;
+    color:var(--muted);
 
 }
 
@@ -3673,17 +3701,17 @@ V7.0
 
 .system-card{
 
-    background:#fff;
+    background:var(--white);
 
-    border-radius:20px;
+    border-radius:var(--card-radius);
 
     padding:45px;
 
-    border:1px solid rgba(0,0,0,.06);
+    border:var(--card-border);
 
-    box-shadow:0 12px 35px rgba(0,0,0,.06);
+    box-shadow:var(--card-shadow);
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -3718,13 +3746,15 @@ V7.0
 
     margin-bottom:18px;
 
+    color:var(--text);
+
 }
 
 .system-card p{
 
     line-height:1.8;
 
-    color:#666;
+    color:var(--muted);
 
     margin-bottom:30px;
 
@@ -3781,7 +3811,7 @@ V7.0
 
     padding:110px 0;
 
-    background:#f7f9fc;
+    background:var(--background);
 
 }
 
@@ -3803,7 +3833,7 @@ V7.0
 
     text-align:center;
 
-    color:#555;
+    color:var(--muted);
 
 }
 .family-list{
@@ -3822,7 +3852,7 @@ V7.0
 
     margin-top:12px;
 
-    color:var(--dark);
+    color:var(--text);
 
     font-size:.9rem;
 
@@ -3861,35 +3891,13 @@ V7.0
 
 }
 
-
-.product-link{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    margin-top:24px;
-
-    font-weight:600;
-
-    color:#0A5FFF;
-
-    text-decoration:none;
-
-}
-
-.product-link:hover{
-
-    transform:translateX(6px);
-
-}
 /*==================================================
 PERFORMANCE
 ==================================================*/
 
 .performance{
 
-    background:#f8fafc;
+    background:var(--background);
 
 }
 
@@ -3909,15 +3917,15 @@ PERFORMANCE
 
     padding:40px 20px;
 
-    background:#fff;
+    background:var(--white);
 
-    border:1px solid rgba(0,0,0,.05);
+    border:var(--card-border);
 
-    border-radius:18px;
+    border-radius:var(--card-radius);
 
     text-align:center;
 
-    transition:.35s;
+    transition:var(--card-transition);
 
 }
 
@@ -3941,7 +3949,7 @@ PERFORMANCE
 
 .performance-item span{
 
-    color:#4b5563;
+    color:var(--muted);
 
     font-weight:600;
 
@@ -3954,7 +3962,7 @@ UZMANLIK ALANLARI
 
 .expertise{
 
-    background:#fff;
+    background:var(--white);
 
 }
 
@@ -4028,9 +4036,9 @@ UZMANLIK ALANLARI
 
 .expertise-content{
 
-    background:#fff;
+    background:var(--white);
 
-    border:1px solid rgba(0,0,0,.06);
+    border:var(--card-border);
 
     border-radius:18px;
 

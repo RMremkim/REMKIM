@@ -1158,7 +1158,7 @@ ABOUT
 
     background:var(--white);
 
-    padding:30px;
+    padding:34px 26px;
 
     border:var(--card-border);
 
@@ -1196,6 +1196,18 @@ ABOUT
     color:var(--text);
 
     font-weight:700;
+
+}
+
+@media (max-width:768px){
+
+    .feature-card h4{
+
+        font-size:1.1rem;
+
+        line-height:1.35;
+
+    }
 
 }
 
@@ -1524,7 +1536,7 @@ PRODUCTS
 
     border-radius:var(--card-radius);
 
-    padding:38px;
+    padding:34px 28px;
 
     transition:var(--card-transition);
 
@@ -2364,12 +2376,7 @@ MOBILE
 
     }
 
-    nav.open{
-
-        right:0;
-
-    }
-
+    
     nav a{
 
         margin:0 0 24px 0;
@@ -3353,29 +3360,39 @@ PROGRESS BAR
 BACK TO TOP
 ==================================================*/
 
+/*==================================================
+BACK TO TOP
+==================================================*/
+
 .back-to-top{
 
     position:fixed;
 
-    right:28px;
+    right:24px;
 
-    bottom:28px;
+    bottom:24px;
 
-    width:56px;
+    width:52px;
 
-    height:56px;
+    height:52px;
 
     border:none;
 
     border-radius:50%;
 
-    background:#149fe9;
+    background:var(--primary);
 
     color:#fff;
 
-    font-size:24px;
+    font-size:22px;
 
     cursor:pointer;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     opacity:0;
 
@@ -3383,9 +3400,7 @@ BACK TO TOP
 
     transform:translateY(20px);
 
-    transition:var(--card-transition);
-
-    box-shadow:0 15px 35px rgba(20,159,233,.35);
+    transition:.3s;
 
     z-index:999;
 
@@ -3402,8 +3417,6 @@ BACK TO TOP
 }
 
 .back-to-top:hover{
-
-    background:#0b75d1;
 
     transform:translateY(-4px);
 

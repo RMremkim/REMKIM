@@ -87,11 +87,11 @@ MOBILE MENU
 ==================================================*/
 
 const menuToggle=document.querySelector(".menu-toggle");
-const nav=document.querySelector("nav");
+const nav=document.querySelector(".main-nav");
 
 menuToggle.addEventListener("click",()=>{
 
-    nav.classList.toggle("open");
+    nav.classList.toggle("active");
 
 });
 /*==================================================
@@ -113,7 +113,7 @@ menuLinks.forEach(link=>{
 
     link.addEventListener("click",()=>{
 
-        nav.classList.remove("open");
+        nav.classList.remove("active");
 
         menuToggle.classList.remove("active");
 
@@ -136,7 +136,7 @@ document.addEventListener("click",(e)=>{
 
     ){
 
-        nav.classList.remove("open");
+        nav.classList.remove("active");
 
         menuToggle.classList.remove("active");
 
@@ -149,7 +149,7 @@ CLOSE MENU ON SCROLL
 
 window.addEventListener("scroll",()=>{
 
-    nav.classList.remove("open");
+    nav.classList.remove("active");
 
     menuToggle.classList.remove("active");
 

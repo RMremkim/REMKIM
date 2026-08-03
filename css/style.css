@@ -5411,3 +5411,8 @@ PAGE HERO
     gap: 24px;
     justify-items: center;
 }
+.featured-card .btn-outline {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
